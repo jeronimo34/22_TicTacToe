@@ -39,9 +39,10 @@ window.addEventListener('DOMContentLoaded', () => {
         // クリア済みなら何もしない
         if(winner !== 0) return;
 
-        if(gridData[id] === 0) {
-            gridData[id] = currentPlayer;
-        }
+        // マスが既に塗りつぶされているなら何もしない
+        if(gridData[id] !== 0) return;
+
+        gridData[id] = currentPlayer;
 
         // クリア判定
         if(IsClear(PLAYER1)){
