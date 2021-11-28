@@ -39,7 +39,9 @@ window.addEventListener('DOMContentLoaded', () => {
         // クリア済みなら何もしない
         if(winner !== 0) return;
 
-        gridData[id] = currentPlayer;
+        if(gridData[id] === 0) {
+            gridData[id] = currentPlayer;
+        }
 
         // クリア判定
         if(IsClear(PLAYER1)){
